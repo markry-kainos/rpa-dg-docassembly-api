@@ -10,7 +10,6 @@ services:
       - microserviceKeys_em_gw=AAAAAAAAAAAAAAAA
       - microserviceKeys_dg_template_management_api=AAAAAAAAAAAAAAAA
       #      logging env vars
-      #      - ROOT_APPENDER=JSON_CONSOLE
       - JSON_CONSOLE_PRETTY_PRINT=false
       - REFORM_SERVICE_TYPE=java
       - REFORM_SERVICE_NAME=service-auth-provider-app
