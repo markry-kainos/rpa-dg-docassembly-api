@@ -1,4 +1,4 @@
-docassembly:
+docassembly-api:
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
   applicationPort: 8080
@@ -34,12 +34,12 @@ docassembly:
     LOG_LEVEL_DM: INFO
     ENDPOINTS_HEALTH_SENSITIVE: false
     ENDPOINTS_INFO_SENSITIVE: false
-    S2S_NAMES_WHITELIST: em_api,em_gw,ccd_gw,ccd_data,sscs,dg_tmpl_mgmt, divorce_document_upload,divorce_document_generator,probate_backend,jui_webapp,pui_webapp
+    S2S_NAMES_WHITELIST: em_api,em_gw,ccd_gw,ccd_data,sscs,dg_tmpl_mgmt, dg_docassembly, divorce_document_upload,divorce_document_generator,probate_backend,jui_webapp,pui_webapp
     CASE_WORKER_ROLES: caseworker-probate,caseworker-cmc,caseworker-sscs,caseworker-divorce
     ENABLE_IDAM_HEALTH_CHECK: false
     ENABLE_S2S_HEALTH_CHECK: false
     SERVER_PORT: 8080
-    IDAM_API_BASE_URI: https://preprod-idamapi.reform.hmcts.net:3511
+    IDAM_API_BASE_URI: https://idam-api-idam-aat.service.core-compute-idam-aat.internal/
     S2S_BASE_URI: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     IDAM_WEBSHOW_WHITELIST: https://em-show-aat.service.core-compute-aat.internal/oauth2/callback
     DM_STORE_APP_URL: http://dm-store-aat.service.core-compute-aat.internal
