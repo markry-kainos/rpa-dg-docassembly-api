@@ -39,7 +39,7 @@ docassembly-api:
     ENABLE_IDAM_HEALTH_CHECK: false
     ENABLE_S2S_HEALTH_CHECK: false
     SERVER_PORT: 8080
-    IDAM_API_BASE_URI: https://idam-api-idam-aat.service.core-compute-idam-aat.internal/
+    IDAM_API_BASE_URI: https://idam-api-idam-aat.service.core-compute-idam-aat.internal
     S2S_BASE_URI: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     IDAM_WEBSHOW_WHITELIST: https://em-show-aat.service.core-compute-aat.internal/oauth2/callback
     DM_STORE_APP_URL: http://dm-store-aat.service.core-compute-aat.internal
