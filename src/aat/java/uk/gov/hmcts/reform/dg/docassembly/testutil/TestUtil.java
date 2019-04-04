@@ -25,7 +25,6 @@ public class TestUtil {
         RestAssured.useRelaxedHTTPSValidation();
         idamAuth = idamHelper.getIdamToken();
         s2sAuth = s2sHelper.getS2sToken();
-
     }
 
     public RequestSpecification authRequest() {

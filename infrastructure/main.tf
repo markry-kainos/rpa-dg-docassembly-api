@@ -1,5 +1,5 @@
 provider "azurerm" {
-  version = "1.21"
+  version = "1.22.1"
 }
 
 locals {
@@ -75,8 +75,14 @@ module "app" {
     ENABLE_S2S_HEALTH_CHECK = "${var.enable_s2s_healthcheck}"
 
     DM_STORE_APP_URL = "http://${var.dm_store_app_url}-${local.local_env}.service.core-compute-${local.local_env}.internal"
-    DG_TEMPLATE_MANAGEMENT_API = "http://${var.dg_template_management_api}-${local.local_env}.service.core-compute-${local.local_env}.internal"
+
+    DOCMOSIS_ENDPOINT = "${var.docmosis_uri}"
     DOCMOSIS_ACCESS_KEY = "${data.azurerm_key_vault_secret.docmosis_access_key.value}"
+
+    DOCMOSIS_TEMPLATES_ENDPOINT = "${var.docmosis_templates_uri}"
+    DOCMOSIS_TEMPLATES_ENDPOINT_AUTH = "${data.azurerm_key_vault_secret.docmosis_templates_auth.value}"
+
+    WEBSITE_DNS_SERVER                                    = "${var.dns_server}"
   }
 }
 
@@ -89,6 +95,7 @@ module "rpa-dg-docassembly-api-vault" {
   object_id           = "${var.jenkins_AAD_objectId}"
   resource_group_name = "${module.app.resource_group_name}"
   product_group_object_id = "ffb5f9a3-b686-4325-a26e-746db5279a42"
+  common_tags  = "${var.common_tags}"
 }
 
 provider "vault" {
@@ -97,6 +104,11 @@ provider "vault" {
 
 data "azurerm_key_vault_secret" "docmosis_access_key" {
   name      = "docmosis-access-key"
+  vault_uri = "https://rpa-${local.local_env}.vault.azure.net/"
+}
+
+data "azurerm_key_vault_secret" "docmosis_templates_auth" {
+  name      = "docmosis-templates-auth"
   vault_uri = "https://rpa-${local.local_env}.vault.azure.net/"
 }
 
