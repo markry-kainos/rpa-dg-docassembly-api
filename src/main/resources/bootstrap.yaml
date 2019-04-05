@@ -7,3 +7,6 @@ spring:
       aliases:
         s2s.microservicekey-dg-docassembly-api: S2S_KEY
         rpa.AppInsightsInstrumentationKey: APPINSIGHTS_INSTRUMENTATIONKEY
+        rpa.docmosis-access-key: DOCMOSIS_ACCESS_KEY
+        rpa.docmosis-templates-auth: DOCMOSIS_TEMPLATES_ENDPOINT_AUTH
+

@@ -16,6 +16,8 @@ docassembly-api:
       resourceGroup: rpa
       secrets:
         - AppInsightsInstrumentationKey
+        - docmosis-templates-auth
+        - docmosis-access-key
     s2s:
       resourceGroup: rpe-service-auth-provider
       secrets:
@@ -26,7 +28,8 @@ docassembly-api:
     S2S_BASE_URI: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
     IDAM_WEBSHOW_WHITELIST: https://em-show-aat.service.core-compute-aat.internal/oauth2/callback
     DM_STORE_APP_URL: http://dm-store-aat.service.core-compute-aat.internal
-    DG_TEMPLATE_MANAGEMENT_API: http://dg-tmpl-mgmt-aat.service.core-compute-aat.internal
+    DOCMOSIS_TEMPLATES_ENDPOINT: https://docmosis-development.platform.hmcts.net
+    DOCMOSIS_ENDPOINT: https://docmosis-development.platform.hmcts.net/rs/render
 
     REFORM_SERVICE_NAME: dg-docassembly
     REFORM_TEAM: evidence
